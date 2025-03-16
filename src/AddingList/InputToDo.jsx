@@ -3,6 +3,13 @@ import React, { useState } from "react";
 function InputToDo(props) {
   const [inPutText, setInPutText] = useState("");
 
+  const handleEnterPress = (e) => {
+    if (e.keyCode === 13) {
+      props.addList(inPutText);
+      setInPutText("");
+    }
+  };
+
   return (
     <div className=" flex justify-center">
       <div className="bg-fuchsia-50 mt-10 h-[40px] rounded-lg flex justify-between">
@@ -13,6 +20,7 @@ function InputToDo(props) {
             value={inPutText}
             placeholder="Add a Details"
             onChange={(e) => setInPutText(e.target.value)}
+            onKeyDown={handleEnterPress}
           />
         </div>
         <div className="">
