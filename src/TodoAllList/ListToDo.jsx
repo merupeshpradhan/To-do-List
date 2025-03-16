@@ -1,25 +1,15 @@
 import React from "react";
 
-function ListToDo() {
+function ListToDo(props) {
   return (
-    <div className="flex justify-center mt-8">
-      <div className="h-[55vh] w-[85vh] border rounded-2xl p-5">
-        <ul>
-          <li className="border border-blue-400 bg-white w-[30vh] rounded-2xl text-center mb-2">
-            Hy
-          </li>
-          <li className="border border-blue-400 bg-white w-[30vh] rounded-2xl text-center mb-2">
-            Hello
-          </li>
-          <li className="border border-blue-400 bg-white w-[30vh] rounded-2xl text-center mb-2">
-            Welcome
-          </li>
-          <li className="border border-blue-400 bg-white w-[30vh] rounded-2xl text-center mb-2">
-            Travel
-          </li>
-        </ul>
-      </div>
-    </div>
+    <ul className="pt-5">
+      <li className="border-2 border-blue-300 bg-white w-[15vw] h-[4vh] rounded-lg text-center mb-2 flex justify-between items-center">
+        <span className="pl-2">{props.item}</span>
+        <span className="pr-3">
+          <i className="fa-solid fa-trash-can text-red-600"></i>
+        </span>
+      </li>
+    </ul>
   );
 }
 
